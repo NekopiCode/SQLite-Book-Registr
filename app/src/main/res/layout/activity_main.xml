@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textview_aktuelle_quelle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/aktuelle_quelle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stichwort" />
+
+    <EditText
+        android:id="@+id/edit_text_stichwort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/funstelle"/>
+
+    <EditText
+        android:id="@+id/edit_text_fundstelle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/freier_text_zum_stichwort"/>
+
+    <EditText
+        android:id="@+id/edit_text_freier_text_zum_stichwort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/button_eintrag_speichern"
+        android:layout_width="match_parent"
+        android:onClick="onButtonEintragSpeichernClick"
+        android:layout_height="wrap_content"
+        android:text="@string/eintrag_speichern"
+        android:backgroundTint="@color/greywhite"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/button_literaturquelle_erfassen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonQuelleErfassenClick"
+        android:text="@string/Literaturquelle_erfassen"
+        android:backgroundTint="@color/greywhite"
+        android:textColor="@color/black"/>
+</LinearLayout>
+</ScrollView>

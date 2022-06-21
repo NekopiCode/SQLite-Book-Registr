@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">StichwortRegister</string>
+    <string name="gui_con">TODO: GUI Construction</string>
+    <string name="aktuelle_quelle">Aktuelle Quelle:\u0020</string>
+    <string name="liter_quelle">LiteraturQuelle Erfassen</string>
+    <string name="quelle_zurückliefern">Quelle zurückliefern</string>
+    <string name="quellen_prefix">Aktuelle Quelle:\u0020</string>
+    <string name="tv_kurzbezeichnung_der_quelle">Kurzbezeichnung der Quelle</string>
+    <string name="tv_titel_der_quelle">Titel der Quelle</string>
+    <string name="tv_autoren">Autoren</string>
+    <string name="tv_verlag_ort_url">Verlag, Ort oder URL</string>
+    <string name="tv_publikationsdatum">Publikationsdatum</string>
+    <string name="tv_test_string">TV TEST STRING</string>
+    <string name="ev_test_string">ET TEST STRING</string>
+    <string name="quellen_not_null">\"Kurzbezeichung\", \"Titel\", \"Autoren\", \"Verlag, Ort oder URL\" nicht Leer bleiben</string>
+    <string name="stichwort">Stichwort</string>
+    <string name="funstelle">Fundstelle</string>
+    <string name="freier_text_zum_stichwort">Freier Text zum Stichwort</string>
+    <string name="eintrag_speichern">Eintrag Speichern</string>
+    <string name="Literaturquelle_erfassen">Literaturquelle Erfassen</string>
+    <string name="keine_quelle_ausgewaehlt">>Keine Quelle ausgewählt</string>
+    <string name="stichworte_nicht_null">\"Stichwort\",\"Fundstelle\"und \"Text\" dürfen nicht leer bleiben</string>
+    <string name="eintrag_gespeichert">Eintrag Gespeichert</string>
+</resources>
