@@ -21,6 +21,7 @@
     <AutoCompleteTextView
         android:id="@+id/auto_complete_text_view_kurzbeichnung_der_quelle"
         android:layout_width="match_parent"
+        android:completionThreshold="1"
         android:layout_height="wrap_content"/>
 
 
