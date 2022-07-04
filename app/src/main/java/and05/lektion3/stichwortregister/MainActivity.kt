@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
     fun onButtonQuelleErfassenClick (view: View?) {
         val intent = Intent(this, activity_source::class.java)
         startActivityForResult(intent, 0)
+        deleteText()
+
 
     }
 
@@ -58,4 +60,13 @@ class MainActivity : AppCompatActivity() {
 
         Toast.makeText(this, R.string.eintrag_gespeichert, Toast.LENGTH_SHORT).show()
     }
+
+    fun deleteText () {
+        findViewById<TextView>(R.id.auto_complete_text_view_kurzbeichnung_der_quelle).text = ""
+        findViewById<TextView>(R.id.edit_text_titel_der_quelle).text = ""
+        findViewById<TextView>(R.id.edit_text_autoren).text = ""
+        findViewById<TextView>(R.id.edit_text_verlag_ort_url).text = ""
+        findViewById<TextView>(R.id.edit_text_publikationsdatum).text = ""
+    }
+
 }

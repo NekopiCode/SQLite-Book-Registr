@@ -17,9 +17,10 @@ class activity_source : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_source)
 
+        //function call sharedPreference Activate
+        sharedPrefCollectorSecondActivity()
 
-        findViewById<TextView>(R.id.auto_complete_text_view_kurzbeichnung_der_quelle).text =
-        getSharedPreferences("prefSaveQuelle", Context.MODE_PRIVATE).getString("kurz", "")
+
 
         val textView = findViewById<AutoCompleteTextView>(R.id.auto_complete_text_view_kurzbeichnung_der_quelle)
         val helper = StichwortRegisterHelper(this)
@@ -62,10 +63,20 @@ class activity_source : AppCompatActivity() {
         val verlagOrtUrl = findViewById<TextView>(R.id.edit_text_verlag_ort_url).text
         val publikationsdatum = findViewById<TextView>(R.id.edit_text_publikationsdatum).text
 
-        if (kurzbezeichung.isBlank() || titel.isBlank() || autoren.isBlank() || verlagOrtUrl.isBlank() || publikationsdatum.isBlank()) {
+        if (kurzbezeichung.isBlank() ||
+            titel.isBlank() ||
+            autoren.isBlank() ||
+            verlagOrtUrl.isBlank() ||
+            publikationsdatum.isBlank()) {
             Toast.makeText(this, R.string.quellen_not_null, Toast.LENGTH_LONG).show()
             return
         }
+
+
+
+
+
+
 
         val helper = StichwortRegisterHelper(this)
         helper.insertQuelle(kurzbezeichung.toString(), titel.toString(), autoren.toString(), verlagOrtUrl.toString(), publikationsdatum.toString())
@@ -78,12 +89,36 @@ class activity_source : AppCompatActivity() {
 
     override fun onPause() {
         super.onPause()
-        val input = findViewById<TextView>(R.id.auto_complete_text_view_kurzbeichnung_der_quelle)
+        val inputKurz = findViewById<TextView>(R.id.auto_complete_text_view_kurzbeichnung_der_quelle).text.toString()
+        val inputTitel_Quelle = findViewById<TextView>(R.id.edit_text_titel_der_quelle).text.toString()
+        val inputAutor = findViewById<TextView>(R.id.edit_text_autoren).text.toString()
+        val inputVerlag = findViewById<TextView>(R.id.edit_text_verlag_ort_url).text.toString()
+        val inputPublikationsDatum = findViewById<TextView>(R.id.edit_text_publikationsdatum).text.toString()
         getSharedPreferences("prefSaveQuelle", Context.MODE_PRIVATE)
             .edit()
-            .putString("kurz", input.text.toString())
+            .putString("kurz", inputKurz)
+            .putString("titel_Quelle", inputTitel_Quelle)
+            .putString("autor", inputAutor)
+            .putString("verlag", inputVerlag)
+            .putString("Publik", inputPublikationsDatum)
             .apply()
     }
+
+    fun sharedPrefCollectorSecondActivity () {
+        findViewById<TextView>(R.id.auto_complete_text_view_kurzbeichnung_der_quelle).text =
+            getSharedPreferences("prefSaveQuelle", Context.MODE_PRIVATE).getString("kurz", "")
+        findViewById<TextView>(R.id.edit_text_titel_der_quelle).text =
+            getSharedPreferences("prefSaveQuelle", Context.MODE_PRIVATE).getString("titel_Quelle", "")
+        findViewById<TextView>(R.id.edit_text_autoren).text =
+            getSharedPreferences("prefSaveQuelle", Context.MODE_PRIVATE).getString("autor", "")
+        findViewById<TextView>(R.id.edit_text_verlag_ort_url).text =
+            getSharedPreferences("prefSaveQuelle", Context.MODE_PRIVATE).getString("verlag", "")
+        findViewById<TextView>(R.id.edit_text_publikationsdatum).text =
+            getSharedPreferences("prefSaveQuelle", Context.MODE_PRIVATE).getString("Publik", "")
+    }
+
+
+
 
 
 
