@@ -65,5 +65,11 @@
         android:text="@string/Literaturquelle_erfassen"
         android:backgroundTint="@color/greywhite"
         android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/button_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="delete" />
 </LinearLayout>
 </ScrollView>

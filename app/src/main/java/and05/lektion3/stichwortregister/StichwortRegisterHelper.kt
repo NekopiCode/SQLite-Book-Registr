@@ -1,8 +1,6 @@
 package and05.lektion3.stichwortregister
 
 
-import and05.lektion3.stichwortregister.StichwortRegisterHelper.Contract.SQL_CREATE_QUELLEN
-import and05.lektion3.stichwortregister.StichwortRegisterHelper.Contract.SQL_CREATE_STICHWORTE
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
@@ -51,7 +49,7 @@ class StichwortRegisterHelper(context: Context) : SQLiteOpenHelper(context, DATA
                 "${Stichworte.COLUMN_NAME_TEXT} TEXT," +
                 "CONSTRAINT QuellenFK FOREIGN KEY (${Stichworte.COLUMN_NAME_QUELLE})" +
                 "REFERENCES ${Quellen.TABLE_NAME} (${Quellen.COLUMN_NAME_KURZBEZEICHNUNG})" +
-                "ON DELETE RESTRICT ON UPDATE CASCADE)"
+                "ON DELETE CASCADE ON UPDATE CASCADE)"
 
     }
 
@@ -91,7 +89,7 @@ class StichwortRegisterHelper(context: Context) : SQLiteOpenHelper(context, DATA
         } catch (ex: SQLException) {
             Log.d(javaClass.simpleName, ex.toString())
         } finally {
-            db.close()
+           // db.close()
         }
     }
 
@@ -141,5 +139,11 @@ class StichwortRegisterHelper(context: Context) : SQLiteOpenHelper(context, DATA
         }
         return result
     }
+
+   /* override fun onConfigure(db: SQLiteDatabase) {
+        db.setForeignKeyConstraintsEnabled(true)
+    }
+
+    */
 }
 

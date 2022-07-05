@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 
@@ -20,14 +21,21 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, activity_source::class.java)
             startActivityForResult(intent, 0)
         }
+
+        findViewById<Button>(R.id.button_delete).setOnClickListener {
+            val helper = StichwortRegisterHelper(this)
+            val db = helper.writableDatabase
+            //db.setForeignKeyConstraintsEnabled(true)
+            db.execSQL("PRAGMA foreign_keys = ON;")
+            db.execSQL("DELETE FROM Quellen WHERE kurzbezeichnung='AND01F';")
+            db.close()
+        }
+
     }
 
     fun onButtonQuelleErfassenClick (view: View?) {
         val intent = Intent(this, activity_source::class.java)
         startActivityForResult(intent, 0)
-        deleteText()
-
-
     }
 
 
@@ -59,14 +67,6 @@ class MainActivity : AppCompatActivity() {
         helper.insertStichwort(stichwort, aktuelleQuelle, fundstelle, text)
 
         Toast.makeText(this, R.string.eintrag_gespeichert, Toast.LENGTH_SHORT).show()
-    }
-
-    fun deleteText () {
-        findViewById<TextView>(R.id.auto_complete_text_view_kurzbeichnung_der_quelle).text = ""
-        findViewById<TextView>(R.id.edit_text_titel_der_quelle).text = ""
-        findViewById<TextView>(R.id.edit_text_autoren).text = ""
-        findViewById<TextView>(R.id.edit_text_verlag_ort_url).text = ""
-        findViewById<TextView>(R.id.edit_text_publikationsdatum).text = ""
     }
 
 }
