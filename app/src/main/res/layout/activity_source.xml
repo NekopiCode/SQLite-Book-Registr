@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:context=".activity_source">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_kurzbezeichnung_der_quelle" />
+
+    <AutoCompleteTextView
+        android:id="@+id/auto_complete_text_view_kurzbeichnung_der_quelle"
+        android:layout_width="match_parent"
+        android:completionThreshold="1"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_titel_der_quelle" />
+
+    <EditText
+        android:id="@+id/edit_text_titel_der_quelle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_autoren" />
+
+    <EditText
+        android:id="@+id/edit_text_autoren"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_verlag_ort_url" />
+
+    <EditText
+        android:id="@+id/edit_text_verlag_ort_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_publikationsdatum" />
+
+    <EditText
+        android:id="@+id/edit_text_publikationsdatum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button_quelle_zurückliefern"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/greywhite"
+        android:textColor="@color/black"
+        android:onClick="onButtonQuelleZurueckliefernClick"
+        android:text="@string/quelle_zurückliefern" />
+
+
+
+</LinearLayout>
+
+</ScrollView>
