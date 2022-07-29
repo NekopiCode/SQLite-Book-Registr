@@ -89,6 +89,7 @@ class StichwortRegisterHelper(context: Context) : SQLiteOpenHelper(context, DATA
         } catch (ex: SQLException) {
             Log.d(javaClass.simpleName, ex.toString())
         } finally {
+            // Dies muss als kommentar gemacht werden damit Database Inspector Zugriff hat.
            // db.close()
         }
     }
@@ -140,10 +141,5 @@ class StichwortRegisterHelper(context: Context) : SQLiteOpenHelper(context, DATA
         return result
     }
 
-   /* override fun onConfigure(db: SQLiteDatabase) {
-        db.setForeignKeyConstraintsEnabled(true)
-    }
-
-    */
 }
 
